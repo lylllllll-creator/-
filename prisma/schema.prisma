@@ -1,0 +1,15 @@
+generator client {  
+  provider = "prisma-client-js"  
+}  
+  
+datasource db {  
+  provider = "sqlite"  
+}  
+  
+model FoodRecord {  
+  id        String   @id @default(cuid())  
+  name      String   // 食物名称  
+  calories  Int      // 卡路里数值  
+  analysis  String   // AI 给出的营养评价  
+  createdAt DateTime @default(now()) // 记录生成的时间  
+}  
